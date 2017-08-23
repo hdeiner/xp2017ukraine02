@@ -26,27 +26,27 @@ public class TimeTellerTest {
     }
 
     @Test
-    public void gotLocalTimeCurrent(){
+    public void localTimeCurrent(){
         assertThat(timeTeller.getResult(1,1,false), is(getFormattedTime(LocalDateTime.now())));
     }
 
     @Test
-    public void gotZuluTimeCurrent(){
+    public void zuluTimeCurrent(){
         assertThat(timeTeller.getResult(2,1,false), is(getFormattedTime(LocalDateTime.now(Clock.systemUTC()))+"Z"));
     }
 
     @Test
-    public void gotLocalTimeInWordsCurrent(){
+    public void localTimeInWordsCurrent(){
         assertThat(timeTeller.getResult(1,2,false), matchesPattern("^(\\s|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|almost|a|quarter|half|of|past|after|before|at|night|in|the|morning|afternoon|evening|night)+$"));
     }
 
     @Test
-    public void gotZuluTimeInWordsCurrent(){
+    public void zuluTimeInWordsCurrent(){
         assertThat(timeTeller.getResult(2,2,false), matchesPattern("^(\\s|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|almost|a|quarter|half|of|past|after|before|at|night|in|the|morning|afternoon|evening|night)+Zulu$"));
     }
 
     @Test
-    public void gotEmailForLocalTime(){
+    public void emailForLocalTime(){
         String localTimeNowFormatted = getFormattedTime(LocalDateTime.now());
         timeTeller.getResult(1,1,true);
 
