@@ -37,12 +37,12 @@ public class TimeTellerTest {
 
     @Test
     public void localTimeInWordsCurrent(){
-        assertThat(timeTeller.getResult(1,2,false), matchesPattern("^(\\s|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|almost|a|quarter|half|of|past|after|before|at|night|in|the|morning|afternoon|evening|night)+$"));
+        assertThat(timeTeller.getResult(1,2,false), matchesPattern("^(\\s|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|about|almost|a|little|after|quarter|half|of|past|before|at|night|in|the|morning|afternoon|evening|night)+$"));
     }
 
     @Test
     public void zuluTimeInWordsCurrent(){
-        assertThat(timeTeller.getResult(2,2,false), matchesPattern("^(\\s|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|almost|a|quarter|half|of|past|after|before|at|night|in|the|morning|afternoon|evening|night)+Zulu$"));
+        assertThat(timeTeller.getResult(2,2,false), matchesPattern("^(\\s|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|about|almost|a|little|after|quarter|half|of|past|before|at|night|in|the|morning|afternoon|evening|night)+Zulu$"));
     }
 
     @Test
